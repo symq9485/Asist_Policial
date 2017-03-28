@@ -7,7 +7,6 @@
   <body>
     <center>
       <Strong>Consulta</Strong><br /><br /><br />
-      
       <form name="Consulta" action="result_consulta.php" method="get">
         <table border="1">
           <tr>
