@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>result_consulta.php</title>
+    <title>result_consulta</title>
   </head>
   <body>
     <?php
@@ -44,7 +44,7 @@
               echo ("<tr><th>Vivienda: </th><br /><td>$fila[vivienda_uc]</td></tr>");
               }
             echo("</table></center>");
-            
+
       $consulta="SELECT * FROM Crimenes WHERE cedula_c='$cedula'";
       $resultado=mysqli_query($conexion, $consulta);
 
