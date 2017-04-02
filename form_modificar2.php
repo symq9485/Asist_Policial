@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>result_consulta</title>
+    <title></title>
   </head>
   <body>
     <?php
@@ -38,6 +38,7 @@
             echo("<center><table border='1'>");
             echo("<tr><th colspan='2'>Lugar de residencia</th></tr>");
             while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+              echo ("<tr><th>Id residencia:</th><td>$fila[id_uc]</td></tr>");
               echo ("<tr><th>Estado: </th><br /><td>$fila[estado_uc]</td></tr>");
               echo ("<tr><th>Municipio: </th><br /><td>$fila[municipio_uc]</td></tr>");
               echo ("<tr><th>Calle: </th><br /><td>$fila[calle_uc]</td></tr>");
@@ -52,10 +53,9 @@
       echo("<center><table border='1'>");
       echo("<tr><th colspan='2'>Datos del Crimen</th></tr>");
       while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-
         echo ("<tr><th>Expediente: </th><br /><td>$fila[expediente]</td></tr>");
         echo ("<tr><th>Delito: </th><br /><td>$fila[delito]</td></tr>");
-        if($fila["solicitado"]==0){
+        if($fila["solicitato"]==0){
           $fila["solicitado"]="No";
         }
         else{
@@ -71,6 +71,7 @@
       echo("<center><table border='1'>");
       echo("<tr><th colspan='2'>Lugar del crimen</th></tr>");
       while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+        echo ("<tr><th>Id crimen:</th><td>$fila[id_lc]</td></tr>");
         echo ("<tr><th>Estado: </th><br /><td>$fila[estado_lc]</td></tr>");
         echo ("<tr><th>Municipio: </th><br /><td>$fila[municipio_lc]</td></tr>");
         echo ("<tr><th>Calle: </th><br /><td>$fila[calle_lc]</td></tr>");
@@ -79,38 +80,95 @@
       echo("</table></center>");
     }
     else{
-      echo("<center><h2>El ciudadano no a cometido delitos anteriormente</h2></center>");
+      echo("<h2>El ciudadano no a cometido delitos anteriormente</h2>");
     }
     ?>
+    <center>
+      <p>
+  Marque los campos que desea modificar
+</p>
+<form name="Modificar" action="form_modificar3.php" method="get">
 
+  <table border="1">
+    <tr><th colspan='2'>Datos del ciudadano</th></tr>
+    <tr>
+      <td><strong>Nombre: </strong></td>
+      <td><input name="nombre" type="checkbox" value="true"/></td>
+    </tr>
+    <tr>
+      <td><strong>Apellido: </strong></td>
+      <td><input name="apellido" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Lugar de nacimiento: </strong></td>
+      <td><input name="l_nacimiento" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de nacimiento: </strong></td>
+      <td><input name="f_nacimiento" type="checkbox" value="true" /></td>
+    </tr>
+    <tr><th colspan='2'>Ubicacion de recidencia</th></tr>
+    <tr>
+      <th>Id residencia:</th>
+      <td><input name="id_uc" type="text"</td>
+    </tr>
+    <tr>
+      <td><strong>Estado: </strong></td>
+      <td><input name="estado_uc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Municipio: </strong></td>
+      <td><input name="municipio_uc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Calle: </strong></td>
+      <td><input name="calle_uc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Vivienda: </strong></td>
+      <td><input name="vivienda_uc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr><th colspan='2'>Datos del crimen</th></tr>
+    <tr>
+      <th>Expediente:</th>
+      <td><input name="expediente" type="text"</td>
+    </tr>
+    <tr>
+      <td><strong>Delito: </strong></td>
+      <td><input name="delito" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Solicitado: </strong></td>
+      <td><input name="solicitado" type="checkbox" value="true" /></td>
+    </tr>
+    <tr><th colspan='2'>Lugar del crimen</th></tr>
+    <tr>
+      <th>Id lugar:</th>
+      <td><input name="id_lc" type="text"</td>
+    </tr>
+    <tr>
+      <td><strong>Estado: </strong></td>
+      <td><input name="estado_lc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Municipio: </strong></td>
+      <td><input name="municipio_lc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Calle: </strong></td>
+      <td><input name="calle_lc" type="checkbox" value="true" /></td>
+    </tr>
+    <tr>
+      <td><strong>Lugar: </strong></td>
+      <td><input name="lugar_lc" type="checkbox" value="true" /></td>
+    </tr>
+
+  </table>
+  <?php
+  echo"<input name='cedula' type='hidden' value=$cedula />";
+  ?>
+  <input value="Modificar" type="submit"/>
+</form>
     </center>
-    <center><table border="1">
-      <tr>
-        <th colspan="4">Elija una opcion</th>
-      </tr>
-      <tr>
-        <td>
-          <form action="form_consulta.php">
-            <input value="Consultar" type="submit"/>
-          </form>
-        </td>
-        <td>
-          <form action="form_agregar.php">
-            <input value="Agregar" type="submit"/>
-          </form>
-        </td>
-        <td>
-          <form action="form_modificar.php">
-            <input value="Modificar" type="submit"/>
-          </form>
-        </td>
-        <td>
-          <form action="form_eliminar.php">
-            <input value="Eliminar" type="submit"/>
-          </form>
-        </td>
-      </tr>
-    </table></center>
-
   </body>
 </html>

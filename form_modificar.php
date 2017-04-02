@@ -6,8 +6,8 @@
   </head>
   <body>
     <center>
-      <h1>Consulta</h1><br /><br /><br />
-      <form name="Consulta" action="result_consulta.php" method="get">
+      <Strong>Consulta</Strong><br /><br /><br />
+      <form name="Consulta" action="form_modificar2.php" method="get">
         <table border="1">
           <tr>
             <td><strong>Cedula: </strong></td>
@@ -16,6 +16,6 @@
         </table>
         <input value="Consultar" type="submit"/>
       </form>
-    </center>
+    </cente>
   </body>
 </html>

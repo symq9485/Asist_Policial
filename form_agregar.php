@@ -9,9 +9,7 @@
 
       <h1>Registrar ciudadano</h1><br /><br /><br />
 
-      <form name="Registro" accion="result_agregar.php" method="post">
-
-
+      <form name="Registro" action="result_agregar.php" method="get">
 
         <table border="1">
           <tr><th colspan="2">Datos del ciudadano.</th></tr>
@@ -99,7 +97,7 @@
 
         <br /><br />
 
-        <input value="Registrar" type="submit" />
+        <input value="Agregar" type="submit" />
       </form>
     </center>
   </body>
