@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
     <?php

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
     <?php
@@ -127,7 +128,7 @@
       echo ("<tr><th>Lugar Crimen: </th><td>$lugar_lc</td></tr>");
     }
 
-    echo "</table></center>";
+    echo "</table></center><br/>";
 
     ?>
     <center><table border="1">

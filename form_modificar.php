@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>form_consulta.php</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
     <center>
-      <Strong>Consulta</Strong><br /><br /><br />
+      <h1><Strong>Consulta para modificar</Strong></h1><br />
       <form name="Consulta" action="form_modificar2.php" method="get">
         <table border="1">
           <tr>

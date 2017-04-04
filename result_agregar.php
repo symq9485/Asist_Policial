@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
     <?php
@@ -24,7 +25,7 @@
     $lugar_lc = $_GET['lugar_lc'];
 
     if($cedula=='' ^ $nombre=='' ^ $apellido=='' ^ $l_nacimiento=='' ^ $f_nacimiento=='' ^ $estado_uc=='' ^ $municipio_uc=='' ^ $calle_uc=='' ^ $vivienda_uc=='' ^ $expediente=='' ^ $delito=='' ^ $estado_lc=='' ^ $municipio_lc=='' ^ $calle_lc=='' ^ $lugar_lc==''){
-      echo "<center><h1>Agregar ciudadano.</h1></center>";
+      echo "<center><h1>Agregar ciudadano</h1></center>";
       echo("<center>Debe rellenar todos los campos</center>");
     }
 

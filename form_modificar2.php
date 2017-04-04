@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
     <?php
@@ -80,7 +81,7 @@
       echo("</table></center>");
     }
     else{
-      echo("<h2>El ciudadano no a cometido delitos anteriormente</h2>");
+      echo("<h2><center>El ciudadano no ha cometido delitos anteriormente</center></h2>");
     }
     ?>
     <center>

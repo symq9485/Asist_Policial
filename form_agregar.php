@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
     <center>
 
-      <h1>Registrar ciudadano</h1><br /><br /><br />
+      <h1>Registrar ciudadano</h1><br />
 
       <form name="Registro" action="result_agregar.php" method="get">
 
