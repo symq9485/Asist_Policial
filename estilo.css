@@ -1,0 +1,19 @@
+body{
+    background-color: #f0f8ff;
+    font-family: Helvetica, sans-serif;
+}
+
+h1{
+    color: #0000c8;
+    font-style: bold;
+    text-shadow: black, 4px, 3px, 7px, 2px;
+}
+
+table{
+    border-color:#37526f;
+}
+
+td{
+    font-style: bold;
+    color: #0000c8;
+}
