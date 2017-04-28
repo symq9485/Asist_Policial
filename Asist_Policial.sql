@@ -3,7 +3,6 @@ CREATE DATABASE Asist_Policial;
 
 USE Asist_Policial;
 
-<<<<<<< HEAD
 DROP TABLE IF EXISTS Usuarios;
 CREATE TABLE Usuarios(
 	id_usuario VARCHAR(32) NOT NULL,
@@ -11,19 +10,13 @@ CREATE TABLE Usuarios(
     privilegio BOOL NOT NULL
 )	ENGINE = InnoDB;
 
-=======
->>>>>>> 04753a138c154b2c78487806c8c5be7444dd9bf1
 DROP TABLE IF EXISTS Ciudadanos;
 CREATE TABLE Ciudadanos(
 	cedula INT UNSIGNED NOT NULL,
 	nombre VARCHAR(64) NOT NULL,
 	apellido VARCHAR(64) NOT NULL,
 	l_nacimiento VARCHAR(64) NOT NULL,
-<<<<<<< HEAD
-    f_nacimiento DATE NOT NULL,
-=======
-    f_nacimiento VARCHAR(64) NOT NULL,
->>>>>>> 04753a138c154b2c78487806c8c5be7444dd9bf1
+	f_nacimiento VARCHAR(64) NOT NULL,
 	PRIMARY KEY(cedula)
 )	ENGINE = InnoDB;
 
@@ -67,15 +60,12 @@ CREATE TABLE Lugar_Crimenes(
 		REFERENCES Crimenes(expediente)
 )	ENGINE = InnoDB;
 
-<<<<<<< HEAD
 INSERT INTO Usuarios(id_usuario, clave, privilegio)
 VALUES('sudo', 123, 0);
 
 INSERT INTO Usuarios(id_usuario, clave, privilegio)
 VALUES('user', 123, 1);
 
-=======
->>>>>>> 04753a138c154b2c78487806c8c5be7444dd9bf1
 INSERT INTO Ciudadanos(cedula, nombre, apellido, l_nacimiento, f_nacimiento)
 VALUES(20000001, 'Ramon', 'Rojas', 'Maracay', '2010-12-18');
 
