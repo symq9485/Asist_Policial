@@ -7,11 +7,8 @@
   </head>
   <body>
     <center>
-
       <h1>Registrar ciudadano</h1><br />
-
       <form name="Registro" action="result_agregar.php" method="get">
-
         <table border="1">
           <tr><th colspan="2">Datos del ciudadano.</th></tr>
           <tr>
@@ -35,9 +32,7 @@
             <td><input name="f_nacimiento" type="text" value="" maxlength="10" size="10" /></td>
           </tr>
         </table>
-
         <br /><br /><br />
-
         <table border="1">
           <tr><th colspan="2">Recidencia Actual.</th></tr>
           <tr>
@@ -57,9 +52,7 @@
             <td><input name=vivienda_uc type="text" value="" maxlength="10" size="10" /></td>
           </tr>
         </table>
-
         <br /><br /><br />
-
         <table border="1">
           <tr><th colspan="2">Datos del crimen.</th></tr>
           <tr>
@@ -74,9 +67,7 @@
             <td><input name="solicitado" type="checkbox" value="checkbox" checked="true" /></td>
           </tr>
         </table>
-
         <br /><br /><br />
-
         <table border="1">
           <tr><th colspan="2">Lugar del crimen.</th></tr>
             <td><strong>Estado: </strong></td>
@@ -93,11 +84,8 @@
             <td><strong>Lugar: </strong></td>
             <td><input name="lugar_lc" type="text" value="" maxlength="10" size="10" /></td>
           </tr>
-
         </table>
-
         <br /><br />
-
         <input value="Agregar" type="submit" />
       </form>
     </center>
