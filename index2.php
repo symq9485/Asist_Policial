@@ -5,18 +5,17 @@
     <title></title>
   </head>
   <body>
-    <header name="Cabecera" id="Cabecera">
-
+    <header name="Cabecera" id="id_cabecera">
     </header>
-    <nav>
+    <nav name="Barra" id="id_barra">
 
     </nav>
 
-    <div>
+    <div name="Cuerpo" id="id_cuerpo">
 
     </div>
 
-    <footer>
+    <footer name="Pie" id="id_pie">
 
     </footer>
   </body>
