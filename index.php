@@ -10,22 +10,23 @@
 <!--Aqui hay que poner el encabezado de la pag junto con un logo-->
     </header>
     <article>
-      <table>
-        <tr>
-          <td>
-            <label>Usuario:<input type="text" /></label>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Contraseña:<input type="password" /></label>
-          </td>
-        </tr>
-      </table>
-      <input type=reset />
-
-
+      <form>
+        <table>
+          <tr>
+            <td>
+              <label>Usuario:<input type="text" /></label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Contraseña:<input type="password" /></label>
+            </td>
+          </tr>
+        </table>
+        <input name="boton" value="Ingresar" type="submit" />
+      </form>
     </article>
+
     <footer name="pie" id="id_pie">
 <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
     </footer>
