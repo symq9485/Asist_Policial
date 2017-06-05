@@ -6,17 +6,37 @@
     <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
-    <center>
-      <h1><Strong>Consulta para modificar</Strong></h1><br />
+    <header name="cabecera" id="id_cabecera">
+<!--Aqui hay que poner el encabezado de la pag junto con un logo-->
+    </header>
+    <nav name="barra" id="id_barra">
+      <table>
+            <form action="form_consulta.php">
+              <input name="boton" id="id_boton" value="Consultar" type="submit"/>
+            </form>
+            <form action="form_agregar.php">
+              <input name="boton" id="id_boton" value="Agregar" type="submit"/>
+            </form>
+            <form action="form_modificar.php">
+              <input name="boton" id="id_boton" value="Modificar" type="submit"/>
+            </form>
+            <form action="form_eliminar.php">
+              <input name="boton" id="id_boton" value="Eliminar" type="submit"/>
+            </form>
+      </table>
+    </nav>
+    <article name="" id="">
       <form name="Consulta" action="form_modificar2.php" method="get">
-        <table border="1">
+        <table>
           <tr>
-            <td><strong>Cedula: </strong></td>
-            <td><input name="cedula" type="text" value="" maxlength="10" size="10" /></td>
+            <td><label>Cedula:<input name="cedula" type="text" value="" maxlength="10" size="10" /></label></td>
           </tr>
         </table>
         <input value="Consultar" type="submit"/>
       </form>
-    </cente>
+    </article>
+    <footer name="pie" id="id_pie">
+<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
+    </footer>
   </body>
 </html>

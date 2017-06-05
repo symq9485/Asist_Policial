@@ -6,13 +6,31 @@
     <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
   </head>
   <body>
+    <header name="cabecera" id="id_cabecera">
+<!--Aqui hay que poner el encabezado de la pag junto con un logo-->
+    </header>
+
+    <nav name="barra" id="id_barra">
+      <table>
+            <form action="form_consulta.php">
+              <input name="boton" id="id_boton" value="Consultar" type="submit"/>
+            </form>
+            <form action="form_agregar.php">
+              <input name="boton" id="id_boton" value="Agregar" type="submit"/>
+            </form>
+            <form action="form_modificar.php">
+              <input name="boton" id="id_boton" value="Modificar" type="submit"/>
+            </form>
+            <form action="form_eliminar.php">
+              <input name="boton" id="id_boton" value="Eliminar" type="submit"/>
+            </form>
+      </table>
+    </nav>
     <?php
 
     $cedula=$_GET["cedula"];
 
     include("conexionBD.php");
-
-    echo("<center><h1>Datos Eliminados</h1></center>");
 
     $consulta="SELECT * FROM Ciudadanos WHERE cedula='$cedula'";
     $resultado=mysqli_query($conexion, $consulta);
@@ -37,39 +55,14 @@
       $resultado=mysqli_query($conexion, $consulta);
 
 
-      echo "<center><p>Se eliminaron todos los datos vinculados al numero de CI: " . $cedula . ".</p></center>";
+      echo "<p>Se eliminaron todos los datos vinculados al numero de CI: " . $cedula . ".</p>";
     }
     else{
-      echo"<center><p>No existen datos en la BBDD relacionados al numero de CI: ". $cedula . "</p></center>";
+      echo"<p>No existen datos en la BBDD relacionados al numero de CI: ". $cedula . "</p>";
     }
     ?>
-
-    <center><table border="1">
-      <tr>
-        <th colspan="4">Elija una opcion</th>
-      </tr>
-      <tr>
-        <td>
-          <form action="form_consulta.php">
-            <input value="Consultar" type="submit"/>
-          </form>
-        </td>
-        <td>
-          <form action="form_agregar.php">
-            <input value="Agregar" type="submit"/>
-          </form>
-        </td>
-        <td>
-          <form action="form_modificar.php">
-            <input value="Modificar" type="submit"/>
-          </form>
-        </td>
-        <td>
-          <form action="form_eliminar.php">
-            <input value="Eliminar" type="submit"/>
-          </form>
-        </td>
-      </tr>
-    </table></center>
+    <footer name="pie" id="id_pie">
+<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
+    </footer>
   </body>
 </html>
