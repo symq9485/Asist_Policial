@@ -3,24 +3,28 @@ CREATE DATABASE Asist_Policial;
 
 USE Asist_Policial;
 
-DROP TABLE IF EXISTS Usuarios;
+/*DROP TABLE IF EXISTS Usuarios;*/
 CREATE TABLE Usuarios(
 	id_usuario VARCHAR(32) NOT NULL,
     clave VARCHAR(32) NOT NULL,
-    privilegio BOOL NOT NULL
+    nombre_u VARCHAR(32) NOT NULL,
+    apellido_u VARCHAR(32) NOT NULL,
+    cedula_u INT UNSIGNED NOT NULL,
+    privilegio BOOL NOT NULL,
+    PRIMARY KEY(id_usuario)
 )	ENGINE = InnoDB;
 
-DROP TABLE IF EXISTS Ciudadanos;
+/*DROP TABLE IF EXISTS Ciudadanos;*/
 CREATE TABLE Ciudadanos(
 	cedula INT UNSIGNED NOT NULL,
 	nombre VARCHAR(64) NOT NULL,
 	apellido VARCHAR(64) NOT NULL,
 	l_nacimiento VARCHAR(64) NOT NULL,
-	f_nacimiento VARCHAR(64) NOT NULL,
+	f_nacimiento DATE NOT NULL,
 	PRIMARY KEY(cedula)
 )	ENGINE = InnoDB;
 
-DROP TABLE IF EXISTS Ubicacion_Ciudadanos;
+/*DROP TABLE IF EXISTS Ubicacion_Ciudadanos;*/
 CREATE TABLE Ubicacion_Ciudadanos(
 	id_uc INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	cedula_uc INT UNSIGNED NOT NULL,
@@ -34,7 +38,7 @@ CREATE TABLE Ubicacion_Ciudadanos(
 		REFERENCES Ciudadanos(cedula)
 )	ENGINE = InnoDB;
 
-DROP TABLE IF EXISTS Crimenes;
+/*DROP TABLE IF EXISTS Crimenes;*/
 CREATE TABLE Crimenes(
 	expediente INT UNSIGNED NOT NULL,
     delito VARCHAR(64) NOT NULL,
@@ -46,7 +50,7 @@ CREATE TABLE Crimenes(
 		REFERENCES Ciudadanos(cedula)
 )	ENGINE = InnoDB;
 
-DROP TABLE IF EXISTS Lugar_Crimenes;
+/*DROP TABLE IF EXISTS Lugar_Crimenes;*/
 CREATE TABLE Lugar_Crimenes(
 	id_lc INT UNSIGNED NOT NULL AUTO_INCREMENT,
     estado_lc VARCHAR(64) NOT NULL,
@@ -60,11 +64,11 @@ CREATE TABLE Lugar_Crimenes(
 		REFERENCES Crimenes(expediente)
 )	ENGINE = InnoDB;
 
-INSERT INTO Usuarios(id_usuario, clave, privilegio)
-VALUES('sudo', 123, 0);
+INSERT INTO Usuarios(id_usuario, clave, nombre_u, apellido_u, cedula_u, privilegio)
+VALUES('sudo', 123, 'Samy', 'Mahmod', 17847186, 0);
 
-INSERT INTO Usuarios(id_usuario, clave, privilegio)
-VALUES('user', 123, 1);
+INSERT INTO Usuarios(id_usuario, clave, nombre_u, apellido_u, cedula_u, privilegio)
+VALUES('user', 123, 'Victoria', 'Borras', 24598590, 1);
 
 INSERT INTO Ciudadanos(cedula, nombre, apellido, l_nacimiento, f_nacimiento)
 VALUES(20000001, 'Ramon', 'Rojas', 'Maracay', '2010-12-18');

@@ -22,6 +22,9 @@
           </td>
         </tr>
       </table>
+      <input type=reset />
+
+
     </article>
     <footer name="pie" id="id_pie">
 <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->

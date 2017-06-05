@@ -95,6 +95,7 @@
       }
       echo("</table>");
       echo("<input value='Modificar' type='submit'/>");
+      echo("<input type='reset' />");
       echo("</form>");
       echo("</article>");
     }
