@@ -56,7 +56,7 @@
 
             echo("<tr><td>Lugar de residencia</td></tr>");
             while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-              echo ("<tr><td><label>Id residencia:<input name='id_uc' value='$fila[id_uc]' /></label></td></tr>");
+              //echo ("<tr><td><label>Id residencia:<input name='id_uc' value='$fila[id_uc]' /></label></td></tr>");
               echo ("<tr><td><label>Estado:<input name='estado_uc' value='$fila[estado_uc]'</label></td></tr>");
               echo ("<tr><td><label>Municipio:<input name='municipio_uc' value='$fila[municipio_uc]' /></label></td></tr>");
               echo ("<tr><td><label>Calle: <input name='calle_uc' value='$fila[calle_uc]' /></label></td></tr>");
@@ -87,7 +87,7 @@
 
       echo("<tr><td>Lugar del crimen</td></tr>");
       while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-        echo ("<tr><td><label>Id crimen:<input name='id_lc' value='$fila[id_lc]' /></label></td></tr>");
+        //echo ("<tr><td><label>Id crimen:<input name='id_lc' value='$fila[id_lc]' /></label></td></tr>");
         echo ("<tr><td><label>Estado: <input name='estado-lc' value='$fila[estado_lc]' /></label></td></tr>");
         echo ("<tr><td><label>Municipio: <input name='municipio_lc' value='$fila[municipio_lc]' /></label></td></tr>");
         echo ("<tr><td><label>Calle: <input name='calle_lc' value='$fila[calle_lc]' /></label></td></tr>");

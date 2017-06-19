@@ -47,7 +47,7 @@
         </table>
 
         <table>
-          <tr><td colspan="2">Recidencia Actual.</td></tr>
+          <tr><td>Recidencia Actual.</td></tr>
           <tr>
             <td><label>Estado:<input name=estado_uc type="text" value="" maxlength="30" size="30" /></label></td>
           </tr>

@@ -51,7 +51,7 @@
       }
 
       else{
-        if($solicitado=checkbox){
+        if($solicitado==checkbox){
           $solicitado=1;
         }
         else{
@@ -85,6 +85,12 @@
           //echo("$cedula, $nombre, $apellido, $l_nacimiento, $f_nacimiento, $estado_uc, $municipio_uc, $calle_uc, $vivienda_uc, $delito, $solicitado, $estado_lc, $municipio_lc, $calle_lc, $lugar_lc");
         }
         else{
+          /*
+          echo('<pre>');
+          print_r($_GET);
+          echo('</pre>');
+          */
+
           $consulta="INSERT INTO Ciudadanos(cedula, nombre, apellido, l_nacimiento, f_nacimiento) VALUES('$cedula', '$nombre', '$apellido', '$l_nacimiento', '$f_nacimiento')";
           $resultado=mysqli_query($conexion, $consulta);
 
