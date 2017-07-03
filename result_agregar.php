@@ -3,55 +3,62 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/background2.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
-
-    <header name="cabecera" id="id_cabecera">
-<!--Aqui hay que poner el encabezado de la pag junto con un logo-->
-    </header>
-
-    <nav name="barra" id="id_barra">
-      <table>
-            <form action="form_consulta.php">
-              <input name="boton" id="id_boton" value="Consultar" type="submit"/>
-            </form>
-            <form action="form_agregar.php">
-              <input name="boton" id="id_boton" value="Agregar" type="submit"/>
-            </form>
-            <form action="form_modificar.php">
-              <input name="boton" id="id_boton" value="Modificar" type="submit"/>
-            </form>
-            <form action="form_eliminar.php">
-              <input name="boton" id="id_boton" value="Eliminar" type="submit"/>
-            </form>
-      </table>
+  <div class="jumbotron">
+      <h1 style="text-align: center;">Asistente Policial</h1>
+  </div>
+    <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
+      <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Policia</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="form_agregar.php">Agregar</a>
+              <li><a href="form_consulta.php">Consultar</a></li>
+              <li><a href="form_modificar.php">Modificar</a></li>
+              <li><a href="form_eliminar.php">Eliminar</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>            
+          </div>
+      </div>
     </nav>
-    <article>
       <?php
-      $cedula = $_GET['cedula'];
-      $nombre = $_GET['nombre'];
-      $apellido = $_GET['apellido'];
-      $l_nacimiento = $_GET['l_nacimiento'];
-      $f_nacimiento = $_GET['f_nacimiento'];
-      $estado_uc = $_GET['estado_uc'];
-      $municipio_uc = $_GET['municipio_uc'];
-      $calle_uc = $_GET['calle_uc'];
-      $vivienda_uc = $_GET['vivienda_uc'];
-      $expediente = $_GET['expediente'];
-      $delito = $_GET['delito'];
-      $solicitado = $_GET['solicitado'];
-      $estado_lc = $_GET['estado_lc'];
-      $municipio_lc = $_GET['municipio_lc'];
-      $calle_lc = $_GET['calle_lc'];
-      $lugar_lc = $_GET['lugar_lc'];
+      $cedula = $_POST['cedula'];
+      $nombre = $_POST['nombre'];
+      $apellido = $_POST['apellido'];
+      $l_nacimiento = $_POST['l_nacimiento'];
+      $f_nacimiento = $_POST['f_nacimiento'];
+      $estado_uc = $_POST['estado_uc'];
+      $municipio_uc = $_POST['municipio_uc'];
+      $calle_uc = $_POST['calle_uc'];
+      $vivienda_uc = $_POST['vivienda_uc'];
+      $expediente = $_POST['expediente'];
+      $delito = $_POST['delito'];
+      $solicitado = $_POST['solicitado'];
+      $estado_lc = $_POST['estado_lc'];
+      $municipio_lc = $_POST['municipio_lc'];
+      $calle_lc = $_POST['calle_lc'];
+      $lugar_lc = $_POST['lugar_lc'];
 
       if($cedula=='' || $nombre=='' || $apellido=='' || $l_nacimiento=='' || $f_nacimiento=='' || $estado_uc=='' || $municipio_uc=='' || $calle_uc=='' || $vivienda_uc=='' || $expediente=='' || $delito=='' || $estado_lc=='' || $municipio_lc=='' || $calle_lc=='' || $lugar_lc==''){
         echo("Debe rellenar todos los campos");
       }
 
       else{
-        if($solicitado==checkbox){
+        if(!empty($solicitado)){
           $solicitado=1;
         }
         else{
@@ -66,16 +73,18 @@
 
         if($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
 
-          echo ("<p>
+          ?>    <p>
                   El ciudadano ya se encuentra registrado en la base de datos
                   pero aun asi el resto de los datos fueron agregados.<br />
 
                   Si desea modificar o eliminar los datos ingrese a la opcion
-                  \"modificar\" o \"agregar\" en la barra de navegación.
-                 </p>");
+                  "modificar" o "agregar" en la barra de navegación.
+                 </p>
+          <?php 
+          
           $consulta="INSERT INTO Ubicacion_Ciudadanos(cedula_uc, estado_uc, municipio_uc, calle_uc, vivienda_uc) VALUES('$cedula', '$estado_uc', '$municipio_uc', '$calle_uc', '$vivienda_uc')";
           $resultado=mysqli_query($conexion, $consulta);
-
+          
           $consulta="INSERT INTO Crimenes(expediente, delito, solicitado, cedula_c) VALUES('$expediente','$delito', '$solicitado', '$cedula')";
           $resultado=mysqli_query($conexion, $consulta);
 
@@ -85,12 +94,6 @@
           //echo("$cedula, $nombre, $apellido, $l_nacimiento, $f_nacimiento, $estado_uc, $municipio_uc, $calle_uc, $vivienda_uc, $delito, $solicitado, $estado_lc, $municipio_lc, $calle_lc, $lugar_lc");
         }
         else{
-          /*
-          echo('<pre>');
-          print_r($_GET);
-          echo('</pre>');
-          */
-
           $consulta="INSERT INTO Ciudadanos(cedula, nombre, apellido, l_nacimiento, f_nacimiento) VALUES('$cedula', '$nombre', '$apellido', '$l_nacimiento', '$f_nacimiento')";
           $resultado=mysqli_query($conexion, $consulta);
 
@@ -109,7 +112,6 @@
         }
       }
       ?>
-    </article>
     <footer name="pie" id="id_pie">
 <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
     </footer>

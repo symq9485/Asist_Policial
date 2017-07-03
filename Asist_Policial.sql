@@ -64,6 +64,10 @@ CREATE TABLE Lugar_Crimenes(
 		REFERENCES Crimenes(expediente)
 )	ENGINE = InnoDB;
 
+CREATE view Criminales AS 
+SELECT Ciudadanos.cedula, Ciudadanos.nombre, Ciudadanos.apellido,Crimenes.delito 
+FROM Ciudadanos INNER JOIN Crimenes ON Crimenes.cedula_c = Ciudadanos.cedula AND Crimenes.solicitado = 1;
+
 INSERT INTO Usuarios(id_usuario, clave, nombre_u, apellido_u, cedula_u, privilegio)
 VALUES('sudo', 123, 'Samy', 'Mahmod', 17847186, 0);
 

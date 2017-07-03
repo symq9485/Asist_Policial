@@ -1,0 +1,79 @@
+.navbar-inverse{
+    margin-top: -32px;
+    border-radius: 0px;
+}
+
+.col-sm-3 {
+    text-align:center;
+}
+
+.jumbotron h1{
+    color: ghostwhite;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#body_container{
+    background: url(img/Logo_Policia.png) fixed no-repeat center, ghostwhite;
+}
+
+
+.cedula{
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;    
+}
+
+.residencia{
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;        
+}
+
+.datos{
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;        
+}
+
+.crimen{
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;        
+}
+
+.crimen_lugar{
+    text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;        
+}
+
+#ciudadano_tabla{
+    background-color: white;
+    opacity: 0.8;
+}
+
+.jumbotron{
+    background-image: url(background.jpg);
+    background-color: #F2E9E1;
+    color: ghostwhite;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    border: 4px double #1C140D;
+}
