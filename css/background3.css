@@ -17,18 +17,10 @@
 }
 
 body{
-    background-color: white; 
-    background-position: center;
-}
+    background: url(img/Logo_Policia.png) no-repeat center ,ghostwhite;
+    background-position: 50% 700%;
 
-#info-bg{
-    text-shadow:
-        -1px -1px 0 #fff,
-        1px -1px 0 #fff,
-        -1px 1px 0 #fff,
-        1px 1px 0 #fff;  
 }
-
 
 .cedula{
     text-shadow:
@@ -76,10 +68,8 @@ body{
 }
 
 .jumbotron{
-    background-image: url(img/jumbo.png);
-    background-size: cover;
+    background-image: url(background.jpg);
     background-color: #F2E9E1;
-    height: 200px;
     color: ghostwhite;
     text-shadow:
         -1px -1px 0 #000,
@@ -87,4 +77,3 @@ body{
         -1px 1px 0 #000,
         1px 1px 0 #000;
     border: 4px double #1C140D;
-}

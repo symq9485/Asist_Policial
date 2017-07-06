@@ -82,7 +82,7 @@
                  </p>
           <?php 
           
-          $consulta="INSERT INTO Ubicacion_Ciudadanos(cedula_uc, estado_uc, municipio_uc, calle_uc, vivienda_uc) VALUES('$cedula', '$estado_uc', '$municipio_uc', '$calle_uc', '$vivienda_uc')";
+          $consulta="UPDATE Ubicacion_Ciudadanos(cedula_uc, estado_uc, municipio_uc, calle_uc, vivienda_uc) SET('$cedula', '$estado_uc', '$municipio_uc', '$calle_uc', '$vivienda_uc')";
           $resultado=mysqli_query($conexion, $consulta);
           
           $consulta="INSERT INTO Crimenes(expediente, delito, solicitado, cedula_c) VALUES('$expediente','$delito', '$solicitado', '$cedula')";

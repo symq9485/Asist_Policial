@@ -2,15 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>result_consulta</title>
+    <title>Resultado de la Consulta</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/background2.css">
+    <link rel="stylesheet" href="css/background3.css">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
   <div class="jumbotron">
-      <h1 style="text-align: center;">Asistente Policial</h1>
+      
   </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
@@ -140,38 +140,41 @@
         </div>
       </div>
       <div class="row">
+      <?php  
+        $consulta="SELECT * FROM Lugar_Crimenes, Crimenes WHERE expediente_lc=expediente AND cedula_c=$cedula";
+        $resultado=mysqli_query($conexion, $consulta); 
+      ?>
         <div class="col-md-3"></div>
         <div class="col-md-6">
           <div class="table-responsive">
             <table class="table table-striped">
-              <h2 class="crimen_lugar">Lugar del Crimen</h2>
+              <h2 class="crimen_lugar" style="text-align: center;">Lugar del Crimen</h2>
               <thead>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-              </thead>            
+                <th>Estado</th>
+                <th>Municipio</th>
+                <th>Calle</th>
+                <th>Lugar</th>
+              </thead>
+              <?php while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)) { ?>
+                <tr>
+                  <td><?php echo $fila["estado_lc"]; ?></td>
+                  <td><?php echo $fila["municipio_lc"]; ?></td>
+                  <td><?php echo $fila["calle_lc"]; ?></td>
+                  <td><?php echo $fila["lugar_lc"]; ?></td>
+                </tr>                
+              <?php } ?>            
             </table>
           </div>
         </div>
       </div>
 <?php
-        $consulta="SELECT * FROM Lugar_Crimenes, Crimenes WHERE expediente_lc=expediente AND cedula_c=$cedula";
-        $resultado=mysqli_query($conexion, $consulta);
-
-        echo("<table>");
-        echo("<tr><td>Lugar del crimen</td></tr>");
-        while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-          echo ("<tr><td>Estado: </td><td>$fila[estado_lc]</td></tr>");
-          echo ("<tr><td>Municipio: </td><td>$fila[municipio_lc]</td></tr>");
-          echo ("<tr><td>Calle: </td><td>$fila[calle_lc]</td></tr>");
-          echo ("<tr><td>Lugar: </td><td>$fila[lugar_lc]</td></tr>");
-        }
-        echo("</table>");
       }
-      else{
-        echo("<p>El ciudadano no ha cometido delitos anteriormente</p>");
-      }
+      else{ ?>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <p><center>El ciudadano no ha cometido delitos anteriormente</center></p> 
+        </div>
+      <?php }
       ?>      
     </div>
   </body>

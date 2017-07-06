@@ -2,67 +2,74 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+    <title>Resultado de Eliminacion</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/background2.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
-  <body>
-    <header name="cabecera" id="id_cabecera">
-<!--Aqui hay que poner el encabezado de la pag junto con un logo-->
-    </header>
+  <body>  
+    <form name="Eliminar" action="result_eliminar.php" method="get">
+      <div class="jumbotron">
+        
+      </div>
+        <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Policia</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li><a href="form_agregar.php">Agregar</a>
+                  <li><a href="form_consulta.php">Consultar</a></li>
+                  <li><a href="form_modificar.php">Modificar</a></li>
+                  <li class="active"><a href="form_eliminar.php">Eliminar</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+              </div>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <?php
+          $cedula=$_GET["cedula"];
+          include("conexionBD.php");
+          $consulta="SELECT * FROM Ciudadanos WHERE cedula='$cedula'";
+          $resultado=mysqli_query($conexion, $consulta);
+          if($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+            $consulta="SELECT expediente FROM Crimenes WHERE cedula_c='$cedula'";
+            $resultado=mysqli_query($conexion, $consulta);
+            $result = $resultado;
+            while($fila=mysqli_fetch_array($result, MYSQLI_ASSOC)){
+              $consulta="DELETE FROM Lugar_Crimenes WHERE expediente_lc=$fila[expediente]";
+              $resultado=mysqli_query($conexion, $consulta);
+            }
+            $consulta="DELETE FROM Crimenes WHERE cedula_c=$cedula";
+            $resultado=mysqli_query($conexion, $consulta);
+            $consulta="DELETE FROM Ubicacion_Ciudadanos WHERE cedula_uc=$cedula";
+            $resultado=mysqli_query($conexion, $consulta);
+            $consulta="DELETE FROM Ciudadanos WHERE cedula=$cedula";
+            $resultado=mysqli_query($conexion, $consulta); ?>
+            
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="info-bg">
+              <?php echo("<p>Se eliminaron todos los datos vinculados al numero de CI: " . $cedula . ".</p>"); ?>
+            </div>
 
-    <nav name="barra" id="id_barra">
-      <table>
-            <form action="form_consulta.php">
-              <input name="boton" id="id_boton" value="Consultar" type="submit"/>
-            </form>
-            <form action="form_agregar.php">
-              <input name="boton" id="id_boton" value="Agregar" type="submit"/>
-            </form>
-            <form action="form_modificar.php">
-              <input name="boton" id="id_boton" value="Modificar" type="submit"/>
-            </form>
-            <form action="form_eliminar.php">
-              <input name="boton" id="id_boton" value="Eliminar" type="submit"/>
-            </form>
-      </table>
-    </nav>
-    <?php
-
-    $cedula=$_GET["cedula"];
-
-    include("conexionBD.php");
-
-    $consulta="SELECT * FROM Ciudadanos WHERE cedula='$cedula'";
-    $resultado=mysqli_query($conexion, $consulta);
-
-    if($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-
-
-      $consulta="SELECT expediente FROM Crimenes WHERE cedula_c='$cedula'";
-      $resultado=mysqli_query($conexion, $consulta);
-      while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-        $consulta="DELETE FROM Lugar_Crimenes WHERE expediente_lc=$fila[expediente]";
-        $resultado=mysqli_query($conexion, $consulta);
-      }
-
-      $consulta="DELETE FROM Crimenes WHERE cedula_c=$cedula";
-      $resultado=mysqli_query($conexion, $consulta);
-
-      $consulta="DELETE FROM Ubicacion_Ciudadanos WHERE cedula_uc=$cedula";
-      $resultado=mysqli_query($conexion, $consulta);
-
-      $consulta="DELETE FROM Ciudadanos WHERE cedula=$cedula";
-      $resultado=mysqli_query($conexion, $consulta);
-
-
-      echo "<p>Se eliminaron todos los datos vinculados al numero de CI: " . $cedula . ".</p>";
-    }
-    else{
-      echo"<p>No existen datos en la BBDD relacionados al numero de CI: ". $cedula . "</p>";
-    }
-    ?>
-    <footer name="pie" id="id_pie">
-<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
-    </footer>
+          <?php } 
+          else{ ?>
+            
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="info-bg">
+              <?php echo("<h2 style='text-align:center;'>No existen datos en la BBDD relacionados al numero de CI: ". $cedula . "</h1>"); ?>
+            </div>
+          <?php }
+          ?>          
+        </div>
   </body>
-</html>

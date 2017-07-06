@@ -13,7 +13,6 @@
 <!--Aqui hay que poner el encabezado de la pag junto con un logo-->
     </header>
     <div class="jumbotron">
-        <h1 style="text-align: center;">Asistente Policial</h1>
     </div>    
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
@@ -29,7 +28,7 @@
             <ul class="nav navbar-nav">
               <li><a href="form_agregar.php">Agregar</a>
               <li><a href="form_consulta.php">Consultar</a></li>
-              <li><a href="form_modificar.php" class="active">Modificar</a></li>
+              <li class="active"><a href="form_modificar.php">Modificar</a></li>
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -43,7 +42,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <div class="form-group row">
-              <form name="Modificar" action="form_modificar2.php" method="get">
+              <form name="Modificar" action="form_modificar2.php" method="POST">
                 <label for="id_cedula" class="cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                 <button type="submit" class="btn btn-warning">Modificar</button>
               </form>             

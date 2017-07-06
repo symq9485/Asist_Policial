@@ -10,7 +10,7 @@
   </head>
   <body>
   <div class="jumbotron">
-      <h1 style="text-align: center;">Asistente Policial</h1>
+      
   </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
@@ -43,16 +43,16 @@
           <table class="table table-responsive">
             <thead><th class="datos">Datos del ciudadano.</th></thead>
             <tr>
-              <td><label>Cedula de identidad</label><span class="asterisk" style="color:red">*</span><input class="form-control" name="cedula" type="number" required="required" value="" placeholder="Num de cedula" /></td>
+              <td><label>Cedula de identidad</label><span class="asterisk" style="color:red">*</span><input class="form-control" name="cedula" type="number" required="required" value="" placeholder="ej. 24598590" /></td>
             </tr>
             <tr>
-              <td><label>Nombre</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="nombre" type="text" required="required" value="" placeholder="Nombre" /></td>
+              <td><label>Nombre</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="nombre" type="text" required="required" value="" placeholder="ej. Victoria" /></td>
             </tr>
             <tr>
-              <td><label>Apellido</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="apellido" type="text" required="required" value="" placeholder="Apellido" /></td>
+              <td><label>Apellido</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="apellido" type="text" required="required" value="" placeholder="ej. Borras" /></td>
             </tr>
             <tr>
-              <td><label>Lugar de nacimiento</label><input class="form-control" name="l_nacimiento" type="text" value="" placeholder="Lugar de nacimiento" /></td>
+              <td><label>Lugar de nacimiento</label><input class="form-control" name="l_nacimiento" type="text" value="" placeholder="ej. Caracas" /></td>
             </tr>
             <tr>
               <td><label>Fecha de nacimiento</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="f_nacimiento" type="date" required="required" /></td>
@@ -66,16 +66,16 @@
             </thead>
             <tbody>
               <tr>
-                <td><label>Estado</label><input class="form-control" name=estado_uc type="text" value="" placeholder="Estado" /></td>
+                <td><label>Estado</label><input class="form-control" name=estado_uc type="text" value="" placeholder="ej. Nueva Esparta" /></td>
               </tr>
               <tr>
-                <td><label>Municipio</label><input class="form-control" name=municipio_uc type="text" value="" placeholder="Municipio" /></td>
+                <td><label>Municipio</label><input class="form-control" name=municipio_uc type="text" value="" placeholder="ej. Garcia" /></td>
               </tr>
               <tr>
-                <td><label>Calle</label><input class="form-control" name=calle_uc type="text" value="" placeholder="Calle" /></td>
+                <td><label>Calle</label><input class="form-control" name=calle_uc type="text" value="" placeholder="ej. Av. Francisco Fajardo" /></td>
               </tr>
               <tr>
-                <td><label>Vivienda</label><input class="form-control" name=vivienda_uc type="text" value="" placeholder="Vivienda" /></td>
+                <td><label>Vivienda</label><input class="form-control" name=vivienda_uc type="text" value="" placeholder="ej. Casa 96" /></td>
               </tr>              
             </tbody>
           </table>          
@@ -88,10 +88,10 @@
           <table class="table table-responsive">
             <thead><th class="crimen">Datos del crimen.</th></thead>
             <tr>
-              <td><label>Expediente</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="expediente" type="number" required="required" value="" placeholder="Numero de Expediente" /></td>
+              <td><label>Expediente</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="expediente" type="number" required="required" value="" placeholder="ej. 434" /></td>
             </tr>              
             <tr>
-              <td><label>Delito</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="delito" type="text" required="required" value="" placeholder="Tipo de delito" /></td>
+              <td><label>Delito</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="delito" type="text" required="required" value="" placeholder="ej. Homicidio" /></td>
             </tr>          
             <tr>
               <td><label>Solicitado</label> <input type="hidden" required="required" name="solicitado" value="0"><input name="solicitado" type="checkbox" value="1"/></td>
@@ -101,16 +101,16 @@
         <div class="col-md-4">
           <table class="table table-responsive">
             <thead><th class="crimen_lugar">Lugar del crimen.</th></thead>
-              <td><label>Estado</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="estado_lc" type="text" required="required" value="" placeholder="Estado" /></td>
+              <td><label>Estado</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="estado_lc" type="text" required="required" value="" placeholder="ej. Nueva Esparta" /></td>
             </tr>
             <tr>
-              <td><label>Municipio</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="municipio_lc" type="text" required="required" value="" placeholder="Municipio" /></td>
+              <td><label>Municipio</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="municipio_lc" type="text" required="required" value="" placeholder="Mariño" /></td>
             </tr>
             <tr>
-              <td><label>Calle</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="calle_lc" type="text" required="required" value="" placeholder="Calle" /></td>
+              <td><label>Calle</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="calle_lc" type="text" required="required" value="" placeholder="ej. Calle Matasiete" /></td>
             </tr>
             <tr>
-              <td><label>Lugar</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="lugar_lc" type="text" required="required" value="" placeholder="Lugar" /></td>
+              <td><label>Lugar</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="lugar_lc" type="text" required="required" value="" placeholder="Ratan" /></td>
             </tr>
           </table>
         </div>

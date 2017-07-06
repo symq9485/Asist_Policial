@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Eliminar</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/background2.css">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -11,7 +11,7 @@
   <body>  
     <form name="Eliminar" action="result_eliminar.php" method="get">
       <div class="jumbotron">
-        <h1 style="text-align: center;">Asistente Policial</h1>
+        
       </div>
         <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
           <div class="container-fluid">
@@ -41,7 +41,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <div class="form-group row">
-                <form name="Consulta" action="result_consulta.php" method="get">
+                <form name="Consulta" action="result_consulta.php" method="GET">
                   <label class="cedula" for="id_cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                   <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>             
