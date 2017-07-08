@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +14,7 @@
   </head>
   <body>
   <div class="jumbotron">
-      
+
   </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
@@ -24,14 +28,18 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li><a href="form_agregar.php">Agregar</a>
               <li class="active"><a href="form_consulta.php">Consultar</a></li>
-              <li><a href="form_modificar.php">Modificar</a></li>
-              <li><a href="form_eliminar.php">Eliminar</a></li>
+              <?php
+              if($_SESSION['privilegio'] == 0){
+                echo '<li><a href="form_agregar.php">Agregar</a>';
+                echo '<li><a href="form_modificar.php">Modificar</a></li>';
+                echo '<li><a href="form_eliminar.php">Eliminar</a></li>';
+              }
+              ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+            </ul>
           </div>
       </div>
     </nav>
@@ -73,18 +81,18 @@
                   <td><?php echo $fila["f_nacimiento"]; ?></td>
                 </tr>
               <?php
-              } ?>              
+              } ?>
             </table>
-          </div>   
-        </div>        
+          </div>
+        </div>
       </div>
       <div class="row">
         <?php
           $consulta="SELECT * FROM Ubicacion_Ciudadanos WHERE cedula_uc='$cedula'";
           $resultado=mysqli_query($conexion, $consulta);
-        ?>           
+        ?>
         <div class="col-md-3"></div>
-        <div class="col-md-6">        
+        <div class="col-md-6">
           <div class="table-responsive">
             <table class="table table-striped">
               <h2 class="residencia" style="text-align: center;">Direccion del Ciudadano</h2>
@@ -93,7 +101,7 @@
                   <th>Estado</th>
                   <th>Municipio</th>
                   <th>Calle</th>
-                  <th>Vivienda</th>                  
+                  <th>Vivienda</th>
                 </tr>
               </thead>
               <?php while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){ ?>
@@ -103,13 +111,13 @@
                   <td><?php echo $fila["calle_uc"]; ?></td>
                   <td><?php echo $fila["vivienda_uc"]; ?></td>
                 </tr>
-                <?php } ?>                
+                <?php } ?>
             </table>
           </div>
-        </div>        
+        </div>
       </div>
       <div class="row">
-        <?php 
+        <?php
         $consulta="SELECT * FROM Crimenes WHERE cedula_c='$cedula'";
         $resultado=mysqli_query($conexion, $consulta); ?>
 
@@ -134,15 +142,15 @@
                   $fila["solicitado"]="Si";
                 } ?>
                 <td><?php echo $fila["solicitado"]; ?></td></tr>
-               <?php } ?> 
+               <?php } ?>
             </table>
           </div>
         </div>
       </div>
       <div class="row">
-      <?php  
+      <?php
         $consulta="SELECT * FROM Lugar_Crimenes, Crimenes WHERE expediente_lc=expediente AND cedula_c=$cedula";
-        $resultado=mysqli_query($conexion, $consulta); 
+        $resultado=mysqli_query($conexion, $consulta);
       ?>
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -161,8 +169,8 @@
                   <td><?php echo $fila["municipio_lc"]; ?></td>
                   <td><?php echo $fila["calle_lc"]; ?></td>
                   <td><?php echo $fila["lugar_lc"]; ?></td>
-                </tr>                
-              <?php } ?>            
+                </tr>
+              <?php } ?>
             </table>
           </div>
         </div>
@@ -172,10 +180,10 @@
       else{ ?>
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <p><center>El ciudadano no ha cometido delitos anteriormente</center></p> 
+          <p><center>El ciudadano no ha cometido delitos anteriormente</center></p>
         </div>
       <?php }
-      ?>      
+      ?>
     </div>
   </body>
 </html>

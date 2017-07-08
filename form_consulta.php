@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +12,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <div class="jumbotron">
-    
+
   </div>
     <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
       <div class="container-fluid">
@@ -23,10 +26,14 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li><a href="form_agregar.php">Agregar</a>
               <li class="active"><a href="form_consulta.php">Consultar</a></li>
-              <li><a href="form_modificar.php">Modificar</a></li>
-              <li><a href="form_eliminar.php">Eliminar</a></li>
+              <?php
+              if($_SESSION['privilegio'] == 0){
+                echo '<li><a href="form_agregar.php">Agregar</a>';
+                echo '<li><a href="form_modificar.php">Modificar</a></li>';
+                echo '<li><a href="form_eliminar.php">Eliminar</a></li>';
+              }
+              ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -42,10 +49,10 @@
               <form name="Consulta" action="result_consulta.php" method="GET">
                 <label for="id_cedula" class="cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                 <button type="submit" class="btn btn-default">Buscar</button>
-              </form>             
-            </div>        
-          </div>      
-      </div>        
+              </form>
+            </div>
+          </div>
+      </div>
   </div>
     <footer name="pie" id="id_pie">
 <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
