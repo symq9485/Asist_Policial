@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="jumbotron">
-    </div>    
+    </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -29,13 +29,13 @@
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
           </div>
       </div>
     </nav>
     <div class="container-fluid">
-      <form name='Modificar' action='result_modificar.php' method='POST'>    
+      <form name='Modificar' action='result_modificar.php' method='POST'>
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -68,14 +68,14 @@
                <td><input class="form-control" name='nombre' value='<?php echo $fila["nombre"]; ?>' /></td>
                <td><input class="form-control" name='apellido' value='<?php echo $fila["apellido"]; ?>' /></td>
                <td><input class="form-control" name='l_nacimiento' value='<?php echo $fila["l_nacimiento"]; ?>'/></td>
-               <td><input class="form-control" name='f_nacimiento' value='<?php echo $fila["f_nacimiento"]; ?>' type='date'/></td></tr>                    
-             </tbody>   
+               <td><input class="form-control" name='f_nacimiento' value='<?php echo $fila["f_nacimiento"]; ?>' type='date'/></td></tr>
+             </tbody>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-       <?php } 
+       <?php }
           $consulta="SELECT * FROM Ubicacion_Ciudadanos WHERE cedula_uc='$cedula'";
           $resultado=mysqli_query($conexion, $consulta); ?>
 
@@ -95,15 +95,15 @@
                 <td><input class="form-control" name='municipio_uc' value='<?php echo $fila["municipio_uc"]; ?>' /></td>
                 <td><input class="form-control" name='calle_uc' value='<?php echo $fila["calle_uc"]; ?>' /></td>
                 <td><input class="form-control" name='vivienda_uc' value='<?php echo $fila["vivienda_uc"]; ?>'></td></tr>
-             <?php   } ?>                
+             <?php   } ?>
             </tbody>
-          </table>        
+          </table>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <?php 
+          <?php
             $consulta="SELECT * FROM Crimenes WHERE cedula_c='$cedula'";
             $resultado=mysqli_query($conexion, $consulta); ?>
 
@@ -126,15 +126,15 @@
                     $fila["solicitado"]="Si"; ?>
                     <td><input type="hidden" required="required" name="solicitado" value="0"> <input class="form-control" name='solicitado' value='0' type='checkbox' checked/></td></tr>
                 <?php  }
-                } ?>                 
+                } ?>
               </tbody>
-            </table>         
+            </table>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <?php 
+          <?php
 
           $consulta="SELECT * FROM Lugar_Crimenes, Crimenes WHERE expediente_lc=expediente AND cedula_c=$cedula";
           $resultado=mysqli_query($conexion, $consulta); ?>
@@ -155,9 +155,9 @@
                 <td><input class="form-control" name='municipio_lc' value='<?php echo $fila["municipio_lc"]; ?>' /></td>
                 <td><input class="form-control" name='calle_lc' value='<?php echo $fila["calle_lc"]; ?>' /></td>
                 <td><input class="form-control" name='lugar_lc' value='<?php echo $fila["lugar_lc"]; ?>' /></label></td></tr>
-             <?php } ?>                
+             <?php } ?>
             </tbody>
-          </table>        
+          </table>
         </div>
       </div>
       <div class="row">
@@ -172,10 +172,10 @@
         <div class="row">
           <div class="col-md-12">
             <h1 style="text-align: center;">El Ciudadano no ha cometido delitos anteriormente</h1>
-          </div>          
+          </div>
         </div>
        <?php }
-        ?>      
+        ?>
     </div>
     <footer name="pie" id="id_pie">
 <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->

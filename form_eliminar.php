@@ -8,10 +8,10 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
-  <body>  
+  <body>
     <form name="Eliminar" action="result_eliminar.php" method="get">
       <div class="jumbotron">
-        
+
       </div>
         <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
           <div class="container-fluid">
@@ -31,7 +31,7 @@
                   <li class="active"><a href="form_eliminar.php">Eliminar</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
                 </ul>
               </div>
           </div>
@@ -44,10 +44,10 @@
                 <form name="Consulta" action="result_consulta.php" method="GET">
                   <label class="cedula" for="id_cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                   <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>             
-              </div>        
-            </div>      
-          </div> 
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
     </form>
   </body>

@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="jumbotron">
-    </div>    
+    </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -29,8 +29,8 @@
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
           </div>
       </div>
     </nav>
@@ -156,9 +156,9 @@
                   $consulta="UPDATE Lugar_Crimenes SET lugar_lc='$lugar_lc' WHERE id_lc='$id_lc'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Lugar Crimen: </b></td><td>$lugar_lc</td></tr>");
-                } ?> 
+                } ?>
             </table>
-          </div>          
+          </div>
         </div>
       </div>
     </div>

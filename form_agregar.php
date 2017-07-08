@@ -10,7 +10,7 @@
   </head>
   <body>
   <div class="jumbotron">
-      
+
   </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
@@ -30,12 +30,12 @@
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
           </div>
       </div>
     </nav>
-    <form name="Registro" action="result_agregar.php" method="POST">    
+    <form name="Registro" action="result_agregar.php" method="POST">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2"></div>
@@ -57,8 +57,8 @@
             <tr>
               <td><label>Fecha de nacimiento</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="f_nacimiento" type="date" required="required" /></td>
             </tr>
-          </table>        
-        </div> 
+          </table>
+        </div>
         <div class="col-md-4">
           <table class="table table-responsive">
             <thead>
@@ -76,10 +76,10 @@
               </tr>
               <tr>
                 <td><label>Vivienda</label><input class="form-control" name=vivienda_uc type="text" value="" placeholder="ej. Casa 96" /></td>
-              </tr>              
+              </tr>
             </tbody>
-          </table>          
-        </div>     
+          </table>
+        </div>
       </div>
       <hr>
       <div class="row">
@@ -89,14 +89,14 @@
             <thead><th class="crimen">Datos del crimen.</th></thead>
             <tr>
               <td><label>Expediente</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="expediente" type="number" required="required" value="" placeholder="ej. 434" /></td>
-            </tr>              
+            </tr>
             <tr>
               <td><label>Delito</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="delito" type="text" required="required" value="" placeholder="ej. Homicidio" /></td>
-            </tr>          
+            </tr>
             <tr>
               <td><label>Solicitado</label> <input type="hidden" required="required" name="solicitado" value="0"><input name="solicitado" type="checkbox" value="1"/></td>
             </tr>
-          </table>          
+          </table>
         </div>
         <div class="col-md-4">
           <table class="table table-responsive">
@@ -118,7 +118,7 @@
       <div class="row">
         <div class="col-md-5"></div>
         <div class="col-md-4">
-          <button type="submit" class="btn btn-info" id="buton">Agregar</button>          
+          <button type="submit" class="btn btn-info" id="buton">Agregar</button>
         </div>
       </div>
     </div>

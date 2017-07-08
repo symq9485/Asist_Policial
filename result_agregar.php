@@ -30,8 +30,8 @@
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
           </div>
       </div>
     </nav>
@@ -80,11 +80,11 @@
                   Si desea modificar o eliminar los datos ingrese a la opcion
                   "modificar" o "agregar" en la barra de navegación.
                  </p>
-          <?php 
-          
+          <?php
+
           $consulta="UPDATE Ubicacion_Ciudadanos(cedula_uc, estado_uc, municipio_uc, calle_uc, vivienda_uc) SET('$cedula', '$estado_uc', '$municipio_uc', '$calle_uc', '$vivienda_uc')";
           $resultado=mysqli_query($conexion, $consulta);
-          
+
           $consulta="INSERT INTO Crimenes(expediente, delito, solicitado, cedula_c) VALUES('$expediente','$delito', '$solicitado', '$cedula')";
           $resultado=mysqli_query($conexion, $consulta);
 

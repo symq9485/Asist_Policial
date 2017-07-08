@@ -36,7 +36,7 @@ session_start();
               ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
             </ul>
           </div>
       </div>

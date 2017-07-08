@@ -13,7 +13,7 @@
 <!--Aqui hay que poner el encabezado de la pag junto con un logo-->
     </header>
     <div class="jumbotron">
-    </div>    
+    </div>
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -32,8 +32,8 @@
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
           </div>
       </div>
     </nav>
@@ -45,10 +45,10 @@
               <form name="Modificar" action="form_modificar2.php" method="POST">
                 <label for="id_cedula" class="cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                 <button type="submit" class="btn btn-warning">Modificar</button>
-              </form>             
-            </div>        
-          </div>      
-      </div> 
+              </form>
+            </div>
+          </div>
+      </div>
     </div>
     <footer name="pie" id="id_pie">
 <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->

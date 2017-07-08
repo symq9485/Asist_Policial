@@ -30,17 +30,17 @@
               <li><a href="form_eliminar.php">Eliminar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>            
+              <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+            </ul>
           </div>
       </div>
     </nav>
     <div class="container-fluid">
-	    <?php 
+	    <?php
 	    	require_once('conexionBD.php');
 	    	$sql = "SELECT * FROM Criminales";
 	    	$result = mysqli_query($conexion, $sql);
-	     ?> 
+	     ?>
 	     <div class="table-responsive">
 	     	<table class="table table-hover">
 	     		<tr>
@@ -49,9 +49,9 @@
 	     			<th>Apellido</th>
 	     			<th>Delito</th>
 	     		</tr>
-	     		<?php 
+	     		<?php
 	     			while($row = mysqli_fetch_array($result))
-	     				{ 
+	     				{
 	     				?>
 		     				<tr>
 		     					<td><?php echo $row["cedula"]; ?></td>
@@ -64,7 +64,7 @@
 	     			require_once('cerrar.php');
 	     			?>
 	     	</table>
-	     </div>   	
+	     </div>
     </div>
 </body>
 </html>

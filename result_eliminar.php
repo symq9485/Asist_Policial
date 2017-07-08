@@ -8,10 +8,10 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
-  <body>  
+  <body>
     <form name="Eliminar" action="result_eliminar.php" method="get">
       <div class="jumbotron">
-        
+
       </div>
         <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
           <div class="container-fluid">
@@ -31,7 +31,7 @@
                   <li class="active"><a href="form_eliminar.php">Eliminar</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
                 </ul>
               </div>
           </div>
@@ -56,20 +56,20 @@
             $resultado=mysqli_query($conexion, $consulta);
             $consulta="DELETE FROM Ciudadanos WHERE cedula=$cedula";
             $resultado=mysqli_query($conexion, $consulta); ?>
-            
+
             <div class="col-md-3"></div>
             <div class="col-md-6" id="info-bg">
               <?php echo("<p>Se eliminaron todos los datos vinculados al numero de CI: " . $cedula . ".</p>"); ?>
             </div>
 
-          <?php } 
+          <?php }
           else{ ?>
-            
+
             <div class="col-md-2"></div>
             <div class="col-md-8" id="info-bg">
               <?php echo("<h2 style='text-align:center;'>No existen datos en la BBDD relacionados al numero de CI: ". $cedula . "</h1>"); ?>
             </div>
           <?php }
-          ?>          
+          ?>
         </div>
   </body>
