@@ -36,6 +36,7 @@
       </div>
     </nav>
       <?php
+      //Variables a las que seles asignan los valores recividos por el metodo _POST
       $cedula = $_POST['cedula'];
       $nombre = $_POST['nombre'];
       $apellido = $_POST['apellido'];
@@ -53,24 +54,26 @@
       $calle_lc = $_POST['calle_lc'];
       $lugar_lc = $_POST['lugar_lc'];
 
+      //Valida que todos los campos tengan algun valor
       if($cedula=='' || $nombre=='' || $apellido=='' || $l_nacimiento=='' || $f_nacimiento=='' || $estado_uc=='' || $municipio_uc=='' || $calle_uc=='' || $vivienda_uc=='' || $expediente=='' || $delito=='' || $estado_lc=='' || $municipio_lc=='' || $calle_lc=='' || $lugar_lc==''){
         echo("Debe rellenar todos los campos");
       }
 
       else{
+        //Asigna a la variable solicitado el valor correspondiente
         if(!empty($solicitado)){
           $solicitado=1;
         }
         else{
           $solicitado=0;
         }
-
+        //Se incluye conexion.php
         include("conexionBD.php");
-
+        //Consulta SQL
         $consulta="SELECT cedula FROM Ciudadanos WHERE cedula='$cedula'";
         $resultado=mysqli_query($conexion, $consulta);
         mysqli_set_charset($conexion, "utf8");
-
+        //En caso de que el ciudadano ya este registrado se guardan los nuevos datos y se muestra el mensaje
         if($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
 
           ?>    <p>
@@ -81,7 +84,7 @@
                   "modificar" o "agregar" en la barra de navegación.
                  </p>
           <?php
-
+          //Se realiza la actualizacion y la incercion de los datos
           $consulta="UPDATE Ubicacion_Ciudadanos(cedula_uc, estado_uc, municipio_uc, calle_uc, vivienda_uc) SET('$cedula', '$estado_uc', '$municipio_uc', '$calle_uc', '$vivienda_uc')";
           $resultado=mysqli_query($conexion, $consulta);
 
@@ -93,6 +96,7 @@
 
           //echo("$cedula, $nombre, $apellido, $l_nacimiento, $f_nacimiento, $estado_uc, $municipio_uc, $calle_uc, $vivienda_uc, $delito, $solicitado, $estado_lc, $municipio_lc, $calle_lc, $lugar_lc");
         }
+        //En caso de que no este registrado previamente solo se realiza la incercion de los datos
         else{
           $consulta="INSERT INTO Ciudadanos(cedula, nombre, apellido, l_nacimiento, f_nacimiento) VALUES('$cedula', '$nombre', '$apellido', '$l_nacimiento', '$f_nacimiento')";
           $resultado=mysqli_query($conexion, $consulta);
@@ -112,8 +116,5 @@
         }
       }
       ?>
-    <footer name="pie" id="id_pie">
-<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
-    </footer>
   </body>
 </html>

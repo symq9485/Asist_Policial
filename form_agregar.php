@@ -12,6 +12,7 @@
   <div class="jumbotron">
 
   </div>
+  <!--Barra de navegacion-->
     <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
       <div class="container-fluid">
           <div class="navbar-header">
@@ -23,7 +24,7 @@
             <a class="navbar-brand" href="#">Policia</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav"><!--Botones para navegar entre las funciones-->
               <li class="active"><a href="form_agregar.php">Agregar</a>
               <li><a href="form_consulta.php">Consultar</a></li>
               <li><a href="form_modificar.php">Modificar</a></li>
@@ -34,13 +35,13 @@
             </ul>
           </div>
       </div>
-    </nav>
-    <form name="Registro" action="result_agregar.php" method="POST">
+    </nav> <!--Fin de la barra de navegacion-->
+    <form name="Registro" action="result_agregar.php" method="POST"><!--Inicio del formulario-->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4">
-          <table class="table table-responsive">
+          <table class="table table-responsive"><!--Tabla para datos de ciudadano-->
             <thead><th class="datos">Datos del ciudadano.</th></thead>
             <tr>
               <td><label>Cedula de identidad</label><span class="asterisk" style="color:red">*</span><input class="form-control" name="cedula" type="number" required="required" value="" placeholder="ej. 24598590" /></td>
@@ -60,7 +61,7 @@
           </table>
         </div>
         <div class="col-md-4">
-          <table class="table table-responsive">
+          <table class="table table-responsive"><!--Tabla para recidencia actual-->
             <thead>
               <th colspan="2" class="residencia">Recidencia Actual.</th>
             </thead>
@@ -85,7 +86,7 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4">
-          <table class="table table-responsive">
+          <table class="table table-responsive"><!--Tabla para datos del crimen-->
             <thead><th class="crimen">Datos del crimen.</th></thead>
             <tr>
               <td><label>Expediente</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="expediente" type="number" required="required" value="" placeholder="ej. 434" /></td>
@@ -99,7 +100,7 @@
           </table>
         </div>
         <div class="col-md-4">
-          <table class="table table-responsive">
+          <table class="table table-responsive"><!--Tabla para lugar del crimen-->
             <thead><th class="crimen_lugar">Lugar del crimen.</th></thead>
               <td><label>Estado</label><span id="asterisk" style="color:red">*</span><input class="form-control" name="estado_lc" type="text" required="required" value="" placeholder="ej. Nueva Esparta" /></td>
             </tr>
@@ -122,10 +123,6 @@
         </div>
       </div>
     </div>
-    </form>
-
-      <footer>
-        <!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
-      </footer>
+  </form><!--Fin del formulario-->
   </body>
 </html>

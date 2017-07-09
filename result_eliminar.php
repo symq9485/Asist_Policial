@@ -38,10 +38,14 @@
         </nav>
         <div class="container-fluid">
           <?php
+          //Se almacena la cedula recivida por el metodo _GET
           $cedula=$_GET["cedula"];
+          //Se incluye conexion.php
           include("conexionBD.php");
+          //Consulta SQL
           $consulta="SELECT * FROM Ciudadanos WHERE cedula='$cedula'";
           $resultado=mysqli_query($conexion, $consulta);
+          //Si existen datos en la base de dados asociados al numero de cedula se procede a eliminarlos
           if($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
             $consulta="SELECT expediente FROM Crimenes WHERE cedula_c='$cedula'";
             $resultado=mysqli_query($conexion, $consulta);
@@ -64,7 +68,7 @@
 
           <?php }
           else{ ?>
-
+            <!--En caso de que no existan dados asociados al numero de cedula se muestra el mensaje-->
             <div class="col-md-2"></div>
             <div class="col-md-8" id="info-bg">
               <?php echo("<h2 style='text-align:center;'>No existen datos en la BBDD relacionados al numero de CI: ". $cedula . "</h1>"); ?>

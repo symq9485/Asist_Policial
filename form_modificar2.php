@@ -11,7 +11,7 @@
   <body>
     <div class="jumbotron">
     </div>
-    <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
+    <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra"><!--Barra de navegacion-->
       <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -22,7 +22,7 @@
             <a class="navbar-brand" href="#">Policia</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav"><!--Botones de opcines-->
               <li><a href="form_agregar.php">Agregar</a>
               <li><a href="form_consulta.php">Consultar</a></li>
               <li class="active"><a href="form_modificar.php">Modificar</a></li>
@@ -40,15 +40,16 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
           <?php
+          //Se guarda la cedula recivida por el metodo _GET
           $cedula=$_POST["cedula"];
-
+          //Se incluye conexion.php
           include("conexionBD.php");
-
+          //Consulta SQL
           $consulta="SELECT * FROM Ciudadanos WHERE cedula='$cedula'";
           $resultado=mysqli_query($conexion, $consulta);
-
+          //Si existen datos asociados a la cedula
           if($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-
+            //Consulta SQL en Ciudadanos
             $consulta="SELECT * FROM Ciudadanos WHERE cedula='$cedula'";
             $resultado=mysqli_query($conexion, $consulta);
             mysqli_set_charset($conexion, "utf8"); ?>
@@ -61,7 +62,7 @@
                 <th>Apellido</th>
                 <th>Lugar de Nacimiento</th>
                 <th>Fecha de Nacimiento</th>
-              </thead>
+              </thead><!--Muestra los datos-->
             <?php while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){ ?>
              <tbody>
                <tr><td><input class="form-control" name='cedula' value='<?php echo $fila["cedula"]; ?>' /></td>
@@ -76,6 +77,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
        <?php }
+       //Consulta SQL en Ubicacion_Ciudadanos
           $consulta="SELECT * FROM Ubicacion_Ciudadanos WHERE cedula_uc='$cedula'";
           $resultado=mysqli_query($conexion, $consulta); ?>
 
@@ -88,7 +90,7 @@
               <th>Calle</th>
               <th>Vivienda</th>
             </thead>
-            <tbody>
+            <tbody><!--Muestra los datos-->
              <?php while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){ ?>
                 <tr><td><input class="form-control" name='id_uc' value='<?php echo $fila["id_uc"]; ?>' /></label></td>
                 <td><input class="form-control" name='estado_uc' value='<?php echo $fila["estado_uc"]; ?>'></td>
@@ -104,6 +106,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
           <?php
+          //Consulta SQL sobre Crimenes
             $consulta="SELECT * FROM Crimenes WHERE cedula_c='$cedula'";
             $resultado=mysqli_query($conexion, $consulta); ?>
 
@@ -114,7 +117,7 @@
                 <th>Delito</th>
                 <th>Solicitado</th>
               </thead>
-              <tbody>
+              <tbody><!--Muestra los datos-->
                 <?php while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){ ?>
                   <tr><td><input class="form-control" name='expediente' value='<?php echo $fila["expediente"]; ?>' /></td>
                   <td><input class="form-control" name='delito' value='<?php echo $fila["delito"]; ?>' /></td>
@@ -135,7 +138,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
           <?php
-
+          //Consulta SQL sobre Lugar_Crimenes
           $consulta="SELECT * FROM Lugar_Crimenes, Crimenes WHERE expediente_lc=expediente AND cedula_c=$cedula";
           $resultado=mysqli_query($conexion, $consulta); ?>
 
@@ -148,7 +151,7 @@
               <th>Calle</th>
               <th>Lugar</th>
             </thead>
-            <tbody>
+            <tbody><!--Muestra los datos-->
               <?php while($fila=mysqli_fetch_array($resultado, MYSQLI_ASSOC)){ ?>
                 <tr><td><input class="form-control" name='id_lc' value='<?php echo $fila["id_lc"]; ?>' /></td>
                 <td><input class="form-control" name='estado_lc' value='<?php echo $fila["estado_lc"]; ?>' /></td>
@@ -177,8 +180,5 @@
        <?php }
         ?>
     </div>
-    <footer name="pie" id="id_pie">
-<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
-    </footer>
   </body>
 </html>

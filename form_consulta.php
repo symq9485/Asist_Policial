@@ -14,7 +14,7 @@ session_start();
   <div class="jumbotron">
 
   </div>
-    <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
+    <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra"><!--Comienzo de la barra de navegacion-->
       <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -28,6 +28,7 @@ session_start();
             <ul class="nav navbar-nav">
               <li class="active"><a href="form_consulta.php">Consultar</a></li>
               <?php
+              //Se valida el tipo de usuario que es y se muestran las opciones que puede realizar el usuario
               if($_SESSION['privilegio'] == 0){
                 echo '<li><a href="form_agregar.php">Agregar</a>';
                 echo '<li><a href="form_modificar.php">Modificar</a></li>';
@@ -46,7 +47,8 @@ session_start();
         <div class="col-md-4">
           <div class="form-group">
             <div class="form-group row">
-              <form name="Consulta" action="result_consulta.php" method="GET">
+              <form name="Consulta" action="result_consulta.php" method="GET"> <!--Formulario de consulta-->
+                <!--Input de la cedula-->
                 <label for="id_cedula" class="cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                 <button type="submit" class="btn btn-default">Buscar</button>
               </form>
@@ -54,8 +56,5 @@ session_start();
           </div>
       </div>
   </div>
-    <footer name="pie" id="id_pie">
-<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
-    </footer>
   </body>
 </html>

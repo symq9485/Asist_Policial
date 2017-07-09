@@ -11,7 +11,7 @@
   <body>
     <div class="jumbotron">
     </div>
-    <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra">
+    <nav class="navbar navbar-inverse navbar-static-top" name="barra" id="id_barra"><!--Barra de navegacion-->
       <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -22,7 +22,7 @@
             <a class="navbar-brand" href="#">Policia</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav"><!--Botones de opciones-->
               <li><a href="form_agregar.php">Agregar</a>
               <li><a href="form_consulta.php">Consultar</a></li>
               <li class="active"><a href="form_modificar.php">Modificar</a></li>
@@ -37,9 +37,10 @@
         <?php
     /*
     echo('<pre>');
-    print_r($_GET);
+    print_r($_POST);
     echo('</pre>');
     */
+    //Se guardan los datos recividos por el metodo _POST
     $solicitado='p';
     $cedula=$_POST['cedula'];
     $nombre = $_POST['nombre'];
@@ -69,90 +70,105 @@
           <div class="table-responsive">
             <table class="table table-responsive">
               <h2 style="text-align: center">Datos Modificados</h2>
-                <?php if($nombre!=''){
+                <?php if($nombre!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ciudadanos SET nombre='$nombre' WHERE cedula='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Nombre: </b></td><td>$nombre</td></tr>");
                 }
 
-                if($apellido!=''){
+                if($apellido!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ciudadanos SET apellido='$apellido' WHERE cedula='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Apellido: </b></td><td>$apellido</td></tr>");
                 }
 
-                if($l_nacimiento!=''){
+                if($l_nacimiento!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ciudadanos SET l_nacimiento='$l_nacimiento' WHERE cedula='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Lugar de Nacimiento: </b></td><td>$l_nacimiento</td></tr>");
                 }
 
-                if($f_nacimiento!=''){
+                if($f_nacimiento!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ciudadanos SET f_nacimiento='$f_nacimiento' WHERE cedula='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Fecha de Nacimiento: </b></td><td>$f_nacimiento</td></tr>");
                 }
 
-                if($estado_uc!=''){
+                if($estado_uc!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ubicacion_Ciudadanos SET estado_uc='$estado_uc' WHERE cedula_uc='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Estado Res: </b></td><td>$estado_uc</td></tr>");
                 }
 
-                if($municipio_uc!=''){
+                if($municipio_uc!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ubicacion_Ciudadanos SET municipio_uc='$municipio_uc' WHERE cedula_uc='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Municipio Res: </b></td><td>$municipio_uc</td></tr>");
                 }
 
-                if($calle_uc!=''){
+                if($calle_uc!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ubicacion_Ciudadanos SET calle_uc='$calle_uc' WHERE cedula_uc='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Calle Res: </b></td><td>$calle_uc</td></tr>");
                 }
 
-                if($vivienda_uc!=''){
+                if($vivienda_uc!=''){ //Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Ubicacion_Ciudadanos SET vivienda_uc='$vivienda_uc' WHERE cedula_uc='$cedula'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Vivienda Res: </b></td><td>$vivienda_uc</td></tr>");
                 }
 
-                if($delito!=''){
+                if($delito!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Crimenes SET delito='$delito' WHERE cedula_c='$cedula' AND expediente='$expediente'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Delito: </b></td><td>$delito</td></tr>");
                 }
 
-                if($solicitado==''){
+                if($solicitado==''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Crimenes SET solicitado=0 WHERE cedula_c='$cedula' AND expediente='$expediente'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Solicitado: </b></td><td>No</td></tr>");
                 }
-                if($solicitado=='1'){
+                if($solicitado=='1'){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Crimenes SET solicitado=1 WHERE cedula_c='$cedula' AND expediente='$expediente'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Solicitado: </b></td><td>Si</td></tr>");
                 }
 
-                if($estado_lc!=''){
+                if($estado_lc!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Lugar_Crimenes SET estado_lc='$estado_lc' WHERE id_lc='$id_lc'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Estado Crimen: </b></td><td>$estado_lc</td></tr>");
                 }
 
-                if($municipio_lc!=''){
+                if($municipio_lc!=''){//Se valida que la variable tenga valor
+                  //consulta SQL
                   $consulta="UPDATE Lugar_Crimenes SET municipio_lc='$municipio_lc' WHERE id_lc='$id_lc'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Municipio Crimen: </b></td><td>$municipio_lc</td></tr>");
                 }
 
-                if($calle_lc!=''){
+                if($calle_lc!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Lugar_Crimenes SET calle_lc='$calle_lc' WHERE id_lc='$id_lc'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Calle Crimen: </b></td><td>$calle_lc</td></tr>");
                 }
 
-                if($lugar_lc!=''){
+                if($lugar_lc!=''){//Se valida que la variable tenga valor
+                  //Consulta SQL
                   $consulta="UPDATE Lugar_Crimenes SET lugar_lc='$lugar_lc' WHERE id_lc='$id_lc'";
                   $resultado=mysqli_query($conexion, $consulta);
                   echo ("<tr><td><b>Lugar Crimen: </b></td><td>$lugar_lc</td></tr>");
@@ -162,9 +178,5 @@
         </div>
       </div>
     </div>
-<b>
-    <footer name="pie" id="id_pie">
-<!--En esta seccion se debe colocar la informacion de la institucion y contacto-->
-    </footer>
   </body>
 </html>

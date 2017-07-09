@@ -13,7 +13,7 @@
       <div class="jumbotron">
 
       </div>
-        <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra">
+        <nav class="navbar navbar-inverse navbar-fixed" name="barra" id="id_barra"><!--Barra de navegacion-->
           <div class="container-fluid">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -40,7 +40,7 @@
           <div class="col-md-5"></div>
           <div class="col-md-4">
             <div class="form-group">
-              <div class="form-group row">
+              <div class="form-group row"><!--Formulario-->
                 <form name="Consulta" action="result_consulta.php" method="GET">
                   <label class="cedula" for="id_cedula">Cedula:<input class="form-control" name="cedula" id="id_cedula" type="text" value="" placeholder="Num de cedula" /></label>
                   <button type="submit" class="btn btn-danger">Eliminar</button>
