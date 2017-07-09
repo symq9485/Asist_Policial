@@ -12,7 +12,7 @@ session_start();
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Opcion</title>
+    <title>Asistente Policial</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/background.css">
     <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
